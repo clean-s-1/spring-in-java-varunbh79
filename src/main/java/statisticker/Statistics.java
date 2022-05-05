@@ -19,21 +19,20 @@ public class Statistics
 
     public static float computeAverage(List<Float> numbers) {
 
-        float summation = (float) numbers.parallelStream()
-                .mapToDouble(Float::floatValue).sum();
+        float summation = (float) numbers.parallelStream().mapToDouble(x->x).sum();
         int numSize = numbers.size();
         return (summation)/numSize;
     }
 
     public static float computeMinimumNumber(List<Float> numbers) {
         float minNum = numbers.parallelStream()
-                .min(Float::compare).get();
+                .min((x,y)-> x.compareTo(y)).get();
         return minNum;
     }
 
     public static float computeMaximumNumber(List<Float> numbers) {
         float maxNum = numbers.parallelStream()
-                .max(Float::compare).get();
+                .max((x,y)->x.compareTo(y)).get();
         return maxNum;
     }
     
