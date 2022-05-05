@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Statistics 
 {
-    class Stats {
+    static class Stats {
         
     }    
     
