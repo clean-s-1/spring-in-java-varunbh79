@@ -26,13 +26,13 @@ public class Statistics
 
     public static float computeMinimumNumber(List<Float> numbers) {
         float minNum = numbers.parallelStream()
-                .min((x,y)-> x.compareTo(y)).get();
+                .min(Float::compare).get();
         return minNum;
     }
 
     public static float computeMaximumNumber(List<Float> numbers) {
         float maxNum = numbers.parallelStream()
-                .max((x,y)->x.compareTo(y)).get();
+                .max(Float::compare).get();
         return maxNum;
     }
     
